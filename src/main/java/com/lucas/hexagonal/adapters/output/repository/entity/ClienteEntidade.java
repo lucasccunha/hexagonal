@@ -5,13 +5,13 @@ import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
 @Data
-@Document(collection = "customers")
-public class CustomerEntity {
+@Document(collection = "clientes")
+public class ClienteEntidade {
 
     @Id
     private String id;
-    private String name;
-    private AddressEntity address;
+    private String nome;
+    private EnderecoEntidade endereco;
     private String cpf;
-    private Boolean isValidCpf;
+    private Boolean cpfValido;
 }

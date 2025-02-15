@@ -1,16 +1,16 @@
 package com.lucas.hexagonal.adapters.output.client;
 
-import com.lucas.hexagonal.adapters.output.client.response.AddressResponse;
+import com.lucas.hexagonal.adapters.output.client.response.EnderecoResponse;
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 
 @FeignClient(
-        name = "FindAddressByZipCodeClient",
+        name = "EncontrarEnderecoPorCepCliente",
         url = "${lucas.client.address.url}"
 )
-public interface FindAddressByZipCodeClient {
+public interface EncontrarEnderecoPorCepCliente {
 
-    @GetMapping("/{zipCode}]")
-    AddressResponse find(@PathVariable("zipCode") String zipCode);
+    @GetMapping("/{cep}]")
+    EnderecoResponse encontrar(@PathVariable("cep") String cep);
 }
